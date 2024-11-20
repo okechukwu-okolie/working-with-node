@@ -9,15 +9,18 @@
 // greet('samuel')
 // greet('elizabeth')
 
-//global object
+//working with global object
 // console.log(global);
 
-global.setTimeout(() => {
-    console.log('hello world');
-    clearInterval(int)
-}, 3000);
+// global.setTimeout(() => {
+//     console.log('hello world');
+//     clearInterval(int)
+// }, 3000);
 
-const int = setInterval(() => {
-    console.log('hello world now');
+// const int = setInterval(() => {
+//     console.log('hello world now');
     
-}, 1000);
+// }, 1000);
+
+// console.log(__dirname)//absolute path of folder
+// console.log(__filename)//absolute path of folder with filename  
