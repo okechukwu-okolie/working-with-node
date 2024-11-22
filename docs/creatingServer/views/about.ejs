@@ -1,22 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Ninja</title>
-</head>
+
+<%- include('./partials/head.ejs')%>
 <body>
-    <nav>
-        <div class="site-title">
-            <a href="/"><h1>Blog Ninja</h1></a>
-            <p>A Net Ninja Site</p>
-        </div>
-        <ul>
-            <li><a href="/">Blog</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/Blogs/create">New Blog</a></li>
-        </ul>
-    </nav>
+    <!-- the line below is like components in react. it simplifies managing repeating codes. a file called nav.ejs has been created  to hold the repeating files -->
+    <%- include('./partials/nav.ejs')%>
 
     <div class="about content">
 
@@ -24,5 +13,8 @@
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit eum mollitia modi minima, laboriosam, dolor recusandae esse, explicabo veniam commodi hic placeat magni cum. Laboriosam dolorum maxime nulla autem debitis.</p>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit eum mollitia modi minima, laboriosam, dolor recusandae esse, explicabo veniam commodi hic placeat magni cum. Laboriosam dolorum maxime nulla autem debitis.</p><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit eum mollitia modi minima, laboriosam, dolor recusandae esse, explicabo veniam commodi hic placeat magni cum. Laboriosam dolorum maxime nulla autem debitis.</p>
 </div>
+
+
+<%- include('./partials/footer.ejs')%>     
 </body>
 </html>

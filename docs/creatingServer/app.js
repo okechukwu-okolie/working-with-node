@@ -1,6 +1,6 @@
 
 const express = require('express')//imporrting expres
-
+const morgan = require('morgan')
 //assigning the express function to a variable
 const app = express();
 
@@ -10,9 +10,42 @@ const app = express();
 
 //listen for request
 app.listen(3000,()=>{
-    console.log('listening on port 3000');
-    
+    console.log('listening on port 3000')
 });
+
+
+
+//WORKING WITH MIDDLE WARE*****************************************
+
+
+// app.use((req,res,next)=>{
+// console.log('new request made');
+// console.log('host:',req.hostname);
+// console.log('path:',req.path);
+// console.log('method:',req.method);
+// next()//this function allows the middle ware to move to the next function or operaton. noticed that its added as a parameter in the use function
+// })
+
+//WORKING WITH THIRD PARTY MIDDLEWARE*****************************
+
+app.use(morgan('dev'))
+app.use(morgan('tiny'))
+app.use(morgan('short'))
+app.use(morgan('common'))
+
+//static middle ware
+
+app.use(express.static('public'))
+
+
+
+
+
+
+
+
+
+
 
 //listening to a get request
 // app.get('/',(req,res)=>{
@@ -111,7 +144,12 @@ app.listen(3000,()=>{
 app.set('view engine','ejs')
 
 app.get('/',(req,res)=>{
-    res.render('index', {title:'Home'})
+    const blogs = [
+        {title:'yoshi finds eggs',snippet:'this is the text with the title'},
+        {title:'mario finds eggs',snippet:'this is the text with the title'},
+        {title:'chunn-li finds eggs',snippet:'this is the text with the title'}
+    ]
+    res.render('index', {title:'Home',blogs})
 })
 
 app.get('/about',(req,res)=>{
@@ -120,15 +158,15 @@ app.get('/about',(req,res)=>{
 
 app.get('/blogs/create',(req,res)=>{
 
-  res.render('create',{title:'create'})
+  res.render('create',{title:'create a new blog'})
 })
 
 
-app.get('/blogs.create',(req,res)=>{
-    res.render('create')
-})
+// app.get('/blogs.create',(req,res)=>{
+//     res.render('create')
+// })
  
 app.get('/404',(req,res)=>{
-    res.status(404).render('404')
+    res.status(404).render('404',{title:'404'})
 })
 
