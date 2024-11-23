@@ -17,7 +17,7 @@ const fs = require('fs')
 // },4000)
 
 //WRITING FILES and CREATING THE FILE
-// fs.writeFile('./docs/blo.txt','this is the written content of the file',()=>{
+// fs.writeFile('./docs/blogs.txt','this is the written content of the file',()=>{
     
 //     console.log('file has been written');
 // })
@@ -44,14 +44,19 @@ const fs = require('fs')
 // }
 
 //DELETING FILES
-if(fs.existsSync('./deleteMe.txt')){
-    fs.unlink('./deleteMe.txt',(err)=>{
-        if(err){
-            console.log(err)
-        }
-        console.log('file deleted')
-    })
-}
+// if(fs.existsSync('./deleteMe.txt')){
+//     fs.unlink('./deleteMe.txt',(err)=>{
+//         if(err){
+//             console.log(err)
+//         }
+//         console.log('file deleted')
+//     })
+// }
+
+fs.writeFile('./deleteMe.txt','file created',()=>{
+    console.log('file created');
+    
+})
     
     
 

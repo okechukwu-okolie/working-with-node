@@ -1,8 +1,13 @@
 
 const express = require('express')//imporrting expres
 const morgan = require('morgan')
+
 //assigning the express function to a variable
 const app = express();
+
+
+//connect to mongodb
+const dbURI = 'mongodb+srv://samuel:samuel@cluster0.ka8jm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 
 
@@ -62,7 +67,7 @@ app.use(express.static('public'))
 //     res.sendFile('./viewing/index.html',{root:__dirname})
 // })
 
-// app.get('/about',(req,res)=>{
+,// app.get('/about',(req,res)=>{
 
 //     // res.send('<h1>Home Page</h1>')
 //     res.sendFile('./viewing/about.html',{root:__dirname})
@@ -73,6 +78,7 @@ app.use(express.static('public'))
 //     // res.send('<h1>Home Page</h1>')
 //     res.sendFile('./viewing/contact.html', {root:__dirname})
 // })
+
 
 
 
@@ -139,7 +145,7 @@ app.use(express.static('public'))
 
 
 
-// //PASSING DATA INTO VIEWS 
+// //PASSING DATA INTO EJS, AND MAKING DATA DYNAMIC.  
 
 app.set('view engine','ejs')
 
