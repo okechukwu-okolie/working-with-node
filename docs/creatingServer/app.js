@@ -1,22 +1,26 @@
 
 const express = require('express')//imporrting expres
 const morgan = require('morgan')
+const mongoose = require('mongoose');
 
 //assigning the express function to a variable
 const app = express();
 
 
 //connect to mongodb
-const dbURI = 'mongodb+srv://samuel:samuel@cluster0.ka8jm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+const dbURI = 'mongodb+srv://samuel:samuel@cluster0.ka8jm.mongodb.net/node-tutorials?retryWrites=true&w=majority&appName=Cluster0'
+mongoose.connect(dbURI)
+.then((result)=>{app.listen(3000,()=>{console.log('listening on port 3000')})})
+.catch((err)=>{console.log(err);})
 
 
 
 
 
 //listen for request
-app.listen(3000,()=>{
-    console.log('listening on port 3000')
-});
+// app.listen(3000,()=>{
+//     console.log('listening on port 3000')
+// });
 
 
 
